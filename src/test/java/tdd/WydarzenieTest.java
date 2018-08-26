@@ -80,6 +80,22 @@ public class WydarzenieTest {
 
     }
 
+    @Test(expected = UczestnikNullException.class)
+    public void czyMoznaDodacNullaZListyUczestnikow() throws UczestnikNullException {
+//        given
+        Uczestnik testowy = null;
+//        when-then
+        WydarzenieTest.wydarzenie.dodajUczestnika(testowy);
+    }
+
+    @Test(expected = UczestnikNullException.class)
+    public void czyUsunacDodacNullaZListyUczestnikow() throws UczestnikNullException {
+//        given
+        Uczestnik testowy = null;
+//        when-then
+        WydarzenieTest.wydarzenie.usunUczestnika(testowy);
+    }
+
     @Test
     public void czyDodanieUczestnikaZmniejszaLiczbeUczestnikowMax() throws UczestnikNullException {
 //        given
