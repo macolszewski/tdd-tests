@@ -8,13 +8,13 @@ public class Wydarzenie {
     private List<Uczestnik> listaUczestnikow;
     private int liczbaUczestnikow;
 
-    Wydarzenie (String tytul) throws WydarzenieNullException {
+    Wydarzenie(String tytul, int liczbaUczestnikow) throws WydarzenieNullException {
         if (tytul == null) {
             throw new WydarzenieNullException("Nie będziesz miał nulla");
         }
         this.tytul = tytul;
         this.listaUczestnikow = new LinkedList<>();
-        liczbaUczestnikow=5;
+        this.liczbaUczestnikow = liczbaUczestnikow;
     }
 
     public int getLiczbaUczestnikow() {
@@ -34,22 +34,24 @@ public class Wydarzenie {
     }
 
     public void dodajUczestnika(Uczestnik uczestnik) throws UczestnikNullException {
-        if (uczestnik==null) {
+        if (uczestnik == null) {
             throw new UczestnikNullException("Uczestnik nie może być nullem");
         }
+        setLiczbaUczestnikow(getLiczbaUczestnikow()-1);
         this.listaUczestnikow.add(uczestnik);
     }
 
     public void usunUczestnika(Uczestnik uczestnik) throws UczestnikNullException {
-        if (uczestnik==null) {
+        if (uczestnik == null) {
             throw new UczestnikNullException("Uczestnik nie może być nullem");
         } else {
             Uczestnik doWywalenia = null;
-            for (Uczestnik uczestnikWydarzenia : listaUczestnikow ) {
+            for (Uczestnik uczestnikWydarzenia : listaUczestnikow) {
                 if (uczestnik.equals(uczestnikWydarzenia)) {
                     doWywalenia = uczestnikWydarzenia;
                 }
             }
+            setLiczbaUczestnikow(getLiczbaUczestnikow()+1);
             listaUczestnikow.remove(doWywalenia);
         }
     }

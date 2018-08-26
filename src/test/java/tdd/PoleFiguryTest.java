@@ -10,15 +10,13 @@ import static org.hamcrest.Matchers.*;
 public class PoleFiguryTest {
 
 
-
-
     @Test
-    public void czyPoleProstokataPoprawneGdyParametryPoprawne(){
+    public void czyPoleProstokataPoprawneGdyParametryPoprawne() {
 //        given
         int a = 5;
         int b = 6;
 //        when
-        double result = PoleFigury.poleProstokata(a,b);
+        double result = PoleFigury.poleProstokata(a, b);
 //        then
         assertThat(result, is(30.0));
     }
@@ -34,37 +32,37 @@ public class PoleFiguryTest {
     }
 
     @Test
-    public void czyPoleTrojkataPoprawneGdyParametryPoprawne(){
+    public void czyPoleTrojkataPoprawneGdyParametryPoprawne() {
 //        given
         int a = 3;
         int b = 4;
         int c = 5;
 //        when
-        double result = PoleFigury.poleTrojkata(a,b,c);
+        double result = PoleFigury.poleTrojkata(a, b, c);
 //        then
         assertThat(result, is(6.0));
     }
 
     @Test
-    public void czyPoleTrapezuPoprawneGdyParametryPoprawne(){
+    public void czyPoleTrapezuPoprawneGdyParametryPoprawne() {
 //        given
         int a = 5;
         int b = 3;
         int h = 3;
 //        when
-        double result = PoleFigury.poleTrapezu(a,b,h);
+        double result = PoleFigury.poleTrapezu(a, b, h);
 //        then
         assertThat(result, is(12.0));
     }
 
     @Test
-    public void czyPoleKolaPoprawneGdyParametryPoprawne(){
+    public void czyPoleKolaPoprawneGdyParametryPoprawne() {
 //        given
         int r = 3;
 //        when
         double result = PoleFigury.poleKola(r);
 //        then
-        assertThat(result, is(Math.PI*(r*r)));
+        assertThat(result, is(Math.PI * (r * r)));
     }
 
 

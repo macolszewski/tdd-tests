@@ -28,7 +28,7 @@ public class UczestnikTest {
         String imie = null;
         String nazwisko = null;
 //        when - then
-        Uczestnik result = new Uczestnik(imie,nazwisko);
+        Uczestnik result = new Uczestnik(imie, nazwisko);
 
     }
 }
